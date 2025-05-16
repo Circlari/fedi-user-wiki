@@ -19,14 +19,14 @@
       - search.highlight  
       - content.code.copy  
       - content.code.annotate
-    palette: # 主题颜色配置 (示例)
-      - scheme: default # 日间模式
+    palette:
+      - scheme: default 
         primary: indigo
         accent: pink
         toggle:
-        icon: material/weather-sunny
-        name: 切换到夜间模式
-      - scheme: slate # 夜间模式
+          icon: material/weather-sunny
+          name: 切换到夜间模式 
+      - scheme: slate
         primary: black
         accent: pink
         toggle:
