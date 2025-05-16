@@ -1,0 +1,19 @@
+site_name: Fediverse user-wiki
+site_url: https://fedi-wiki.tkg3.top
+site_description: 一个面向新手用户的fediverse指南。
+theme:
+  name: material
+  language: zh
+  features:
+    - navigation.top
+copyright: 2025 Circlari-team and all contributers
+
+# repo
+repo_url: https://github.com/Circlari/fedi-user-wiki
+repo_name: fedi-user-wiki 
+
+# Markdown extensions
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - attr_list
