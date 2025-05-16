@@ -1,8 +1,8 @@
   # 站点信息
-  site_name: Fediverse user-wiki
+  site_name: Fedi 新手用户指南
   site_url: https://fedi-wiki.tkg3.top
   site_description: 一个面向新手用户的fediverse指南。
-  copyright: © 2025 Circlari-team and all contributers
+  copyright: ©2025 Circlari-team and all contributers
 
   # 自定义
   theme:
@@ -62,4 +62,16 @@
       timezone: Asia/Shanghai
       locale: zh
       fallback_to_build_date: true
+
+  # 文档结构
+  nav:
+    - 首页: 
+      - 欢迎: index.md
+      - 内容贡献指南: contribute-guide.md
+    - 联邦宇宙:
+      - 概念: fediverse/intro.md
+    - Mastodon:
+      - 简介: mastodon/intro.md
+    - Misskey:
+      - 简介: misskey/intro.md
 
