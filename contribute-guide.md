@@ -10,34 +10,19 @@
 3. 完成后点击 "**Contribute**"（贡献）按钮，提交 "**Pull Requst**"（合并请求）
 4. 等待主仓库管理员对您的合并请求进行审核，若显示 "**Merged**" ，则您的本次提交将在本站页面上体现。
 
-???+ type "编辑指引"
-    1. 文档内容 <br>
-        1.1 查看``mkdocs.yml``文件，在``# 文档结构``部分找到您想要修改的页面所对应的``md``文件。<br>
+::: details 编辑指引
+1. 文档内容 <br>
+        1.1 查看``.vitepress/config.mts``文件，在``sidebar``部分找到您想要修改的页面所对应的``md``文件。<br>
         1.2 对相关文件进行修改。
-    2. 新增页面<br>
-        2.1 在相应内容板块的文件夹下创建新``.md``文件，如``/docs/fediverse/new-page.md``<br>
-        2.2 在``mkdocs.yml``文件的``# 文档结构``部分，进行对应条目的添加<br>
+2. 新增页面<br>
+        2.1 在相应内容板块的文件夹下创建新``.md``文件，如``/fediverse/new-page.md``<br>
+        2.2 在``.vitepress/config.mts``文件的``sidebar``部分，进行对应条目的添加<br>
+:::
     
 
 ## 提出内容修改/增删意见
-通过评论区，或主仓库的 "**Issues**（议题）"、"**Discussion**（讨论）"中提出您的想法。
+通过主仓库的 "[**Issues**](https://github.com/Circlari/fedi-user-wiki/issues)（议题）"、"[**Discussion**](https://github.com/Circlari/fedi-user-wiki/discussions)（讨论）"中提出您的想法。
 
 ---
 
 所有贡献者后续均会在[贡献者列表](contributers.md)专页进行展示。
-
-<script src="https://giscus.app/client.js"
-        data-repo="Circlari/fedi-user-wiki"
-        data-repo-id="R_kgDOOq4Lpg"
-        data-category="Ideas"
-        data-category-id="DIC_kwDOOq4Lps4CqM7O"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="zh-CN"
-        crossorigin="anonymous"
-        async>
-</script>

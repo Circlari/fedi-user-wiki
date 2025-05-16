@@ -1,5 +1,0 @@
-mkdocs
-mkdocs-material
-pymdown-extensions
-Pygments
-mkdocs-git-revision-date-localized-plugin
