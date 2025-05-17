@@ -8,9 +8,15 @@ importers:
 
   .:
     devDependencies:
+      '@waline/client':
+        specifier: ^3.5.7
+        version: 3.5.7
       vitepress:
         specifier: ^1.6.3
         version: 1.6.3(@algolia/client-search@5.25.0)(postcss@8.5.3)(search-insights@2.17.3)
+      vitepress-theme-website:
+        specifier: ^1.0.8
+        version: 1.0.8
       vue:
         specifier: ^3.5.14
         version: 3.5.14
@@ -475,6 +481,11 @@ packages:
   '@vueuse/core@12.8.2':
     resolution: {integrity: sha512-HbvCmZdzAu3VGi/pWYm5Ut+Kd9mn1ZHnn4L5G8kOQTPs/IwIAmJoBrmYk2ckLArgMXZj0AW3n5CAejLUO+PhdQ==}
 
+  '@vueuse/core@13.2.0':
+    resolution: {integrity: sha512-n5TZoIAxbWAQ3PqdVPDzLgIRQOujFfMlatdI+f7ditSmoEeNpPBvp7h2zamzikCmrhFIePAwdEQB6ENccHr7Rg==}
+    peerDependencies:
+      vue: ^3.5.0
+
   '@vueuse/integrations@12.8.2':
     resolution: {integrity: sha512-fbGYivgK5uBTRt7p5F3zy6VrETlV9RtZjBqd1/HxGdjdckBgBM4ugP8LHpjolqTj14TXTxSK1ZfgPbHYyGuH7g==}
     peerDependencies:
@@ -519,12 +530,31 @@ packages:
   '@vueuse/metadata@12.8.2':
     resolution: {integrity: sha512-rAyLGEuoBJ/Il5AmFHiziCPdQzRt88VxR+Y/A/QhJ1EWtWqPBBAxTAFaSkviwEuOEZNtW8pvkPgoCZQ+HxqW1A==}
 
+  '@vueuse/metadata@13.2.0':
+    resolution: {integrity: sha512-kPpzuQCU0+D8DZCzK0iPpIcXI+6ufWSgwnjJ6//GNpEn+SHViaCtR+XurzORChSgvpHO9YC8gGM97Y1kB+UabA==}
+
   '@vueuse/shared@12.8.2':
     resolution: {integrity: sha512-dznP38YzxZoNloI0qpEfpkms8knDtaoQ6Y/sfS0L7Yki4zh40LFHEhur0odJC6xTHG5dxWVPiUWBXn+wCG2s5w==}
+
+  '@vueuse/shared@13.2.0':
+    resolution: {integrity: sha512-vx9ZPDF5HcU9up3Jgt3G62dMUfZEdk6tLyBAHYAG4F4n73vpaA7J5hdncDI/lS9Vm7GA/FPlbOmh9TrDZROTpg==}
+    peerDependencies:
+      vue: ^3.5.0
+
+  '@waline/api@1.0.0':
+    resolution: {integrity: sha512-o0lWjt+/oZH1/4q3DJxTf5kdkgNbSmoLRXIiGznW225A6hq9/9IkOO1DiAijIsxGYJS6psFC+58+IzkD1EerBA==}
+    engines: {node: '>=18'}
+
+  '@waline/client@3.5.7':
+    resolution: {integrity: sha512-9DMlO9fiOgnBQRCIlyasfe0mbpIe4fgecsbOLhai1TbAa9XONFfZYvHoqppedfiyT8Wi156PUFgGNkXFIJowEg==}
+    engines: {node: '>=18'}
 
   algoliasearch@5.25.0:
     resolution: {integrity: sha512-n73BVorL4HIwKlfJKb4SEzAYkR3Buwfwbh+MYxg2mloFph2fFGV58E90QTzdbfzWrLn4HE5Czx/WTjI8fcHaMg==}
     engines: {node: '>= 14.0.0'}
+
+  autosize@6.0.1:
+    resolution: {integrity: sha512-f86EjiUKE6Xvczc4ioP1JBlWG7FKrE13qe/DxBCpe8GCipCq2nFw73aO8QEBKHfSbYGDN5eB9jXWKen7tspDqQ==}
 
   birpc@2.3.0:
     resolution: {integrity: sha512-ijbtkn/F3Pvzb6jHypHRyve2QApOCZDR25D/VnkY2G/lBNcXCTsnsCxgY4k4PkVB7zfwzYbY3O9Lcqe3xufS5g==}
@@ -600,6 +630,16 @@ packages:
   mark.js@8.11.1:
     resolution: {integrity: sha512-1I+1qpDt4idfgLQG+BNWmrqku+7/2bi5nLf4YwF8y8zXvmfiTBY3PV3ZibfrjBueCByROpuBjLLFCajqkgYoLQ==}
 
+  marked-highlight@2.2.1:
+    resolution: {integrity: sha512-SiCIeEiQbs9TxGwle9/OwbOejHCZsohQRaNTY2u8euEXYt2rYUFoiImUirThU3Gd/o6Q1gHGtH9qloHlbJpNIA==}
+    peerDependencies:
+      marked: '>=4 <16'
+
+  marked@15.0.11:
+    resolution: {integrity: sha512-1BEXAU2euRCG3xwgLVT1y0xbJEld1XOrmRJpUwRCcy7rxhSCwMrmEu9LXoPhHSCJG41V7YcQ2mjKRr5BA3ITIA==}
+    engines: {node: '>= 18'}
+    hasBin: true
+
   mdast-util-to-hast@13.2.0:
     resolution: {integrity: sha512-QGYKEuUsYT9ykKBCMOEDLsU5JRObWQusAolFMeko/tYPufNkRffBAQjIE+99jbA87xv6FgmjLtwjh9wBWajwAA==}
 
@@ -647,6 +687,9 @@ packages:
 
   property-information@7.1.0:
     resolution: {integrity: sha512-TwEZ+X+yCJmYfL7TPUOcvBZ4QfoT5YenQiJuX//0th53DE6w0xxLEtfK3iyryQFddXuvkIk51EEgrJQ0WJkOmQ==}
+
+  recaptcha-v3@1.11.3:
+    resolution: {integrity: sha512-sEE6J0RzUkS+sKEBpgCD/AqCU0ffrAVOADGjvAx9vcttN+VLK42SWMkj/J/I6vHu3Kew+xcfbBqDVb65N0QGDw==}
 
   regex-recursion@6.0.2:
     resolution: {integrity: sha512-0YCaSCq2VRIebiaUviZNs0cBz1kg5kVS2UKUfNIx8YVs1cN3AV7NTctO5FOKBA+UT2BPJIWZauYHPqJODG50cg==}
@@ -746,6 +789,10 @@ packages:
         optional: true
       terser:
         optional: true
+
+  vitepress-theme-website@1.0.8:
+    resolution: {integrity: sha512-2SZwFRHkuEKrdI4+equMZzEacWOH7QSR56/rtSs/zoQ15Qtv4ZnjQ9N8NYgAqcljwK/cJ/velul809Re8n4neg==}
+    engines: {node: '>=16.0.0'}
 
   vitepress@1.6.3:
     resolution: {integrity: sha512-fCkfdOk8yRZT8GD9BFqusW3+GggWYZ/rYncOfmgcDtP3ualNHCAg+Robxp2/6xfH1WwPHtGpPwv7mbA3qomtBw==}
@@ -1202,6 +1249,13 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
+  '@vueuse/core@13.2.0(vue@3.5.14)':
+    dependencies:
+      '@types/web-bluetooth': 0.0.21
+      '@vueuse/metadata': 13.2.0
+      '@vueuse/shared': 13.2.0(vue@3.5.14)
+      vue: 3.5.14
+
   '@vueuse/integrations@12.8.2(focus-trap@7.6.4)':
     dependencies:
       '@vueuse/core': 12.8.2
@@ -1214,8 +1268,28 @@ snapshots:
 
   '@vueuse/metadata@12.8.2': {}
 
+  '@vueuse/metadata@13.2.0': {}
+
   '@vueuse/shared@12.8.2':
     dependencies:
+      vue: 3.5.14
+    transitivePeerDependencies:
+      - typescript
+
+  '@vueuse/shared@13.2.0(vue@3.5.14)':
+    dependencies:
+      vue: 3.5.14
+
+  '@waline/api@1.0.0': {}
+
+  '@waline/client@3.5.7':
+    dependencies:
+      '@vueuse/core': 13.2.0(vue@3.5.14)
+      '@waline/api': 1.0.0
+      autosize: 6.0.1
+      marked: 15.0.11
+      marked-highlight: 2.2.1(marked@15.0.11)
+      recaptcha-v3: 1.11.3
       vue: 3.5.14
     transitivePeerDependencies:
       - typescript
@@ -1235,6 +1309,8 @@ snapshots:
       '@algolia/requester-browser-xhr': 5.25.0
       '@algolia/requester-fetch': 5.25.0
       '@algolia/requester-node-http': 5.25.0
+
+  autosize@6.0.1: {}
 
   birpc@2.3.0: {}
 
@@ -1327,6 +1403,12 @@ snapshots:
 
   mark.js@8.11.1: {}
 
+  marked-highlight@2.2.1(marked@15.0.11):
+    dependencies:
+      marked: 15.0.11
+
+  marked@15.0.11: {}
+
   mdast-util-to-hast@13.2.0:
     dependencies:
       '@types/hast': 3.0.4
@@ -1381,6 +1463,8 @@ snapshots:
   preact@10.26.6: {}
 
   property-information@7.1.0: {}
+
+  recaptcha-v3@1.11.3: {}
 
   regex-recursion@6.0.2:
     dependencies:
@@ -1492,6 +1576,12 @@ snapshots:
       rollup: 4.40.2
     optionalDependencies:
       fsevents: 2.3.3
+
+  vitepress-theme-website@1.0.8:
+    dependencies:
+      '@waline/client': 3.5.7
+    transitivePeerDependencies:
+      - typescript
 
   vitepress@1.6.3(@algolia/client-search@5.25.0)(postcss@8.5.3)(search-insights@2.17.3):
     dependencies:
