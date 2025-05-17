@@ -8,7 +8,9 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '主页', link: '/' },
-      { text: '文档', link: '/intro/index.md' }
+      { text: '联邦宇宙', link: '/intro/index.md' },
+      { text: '应用生态', link: '/software/index.md' },
+      { text: '部署教程', link: '/for-admin/index.md' }
     ],
 
     sidebar: [
@@ -17,16 +19,19 @@ export default defineConfig({
           { text: '引入', link: '/intro/index.md' },
         ]
       },
-      { text: 'Mastodon',
+      { text: '应用生态',
         items: [
-          { text: '简介', link: '/mastodon/intro.md' },
+          { text: 'Mastodon（长毛象）', link: '/software/mastodon.md' },
+          { text: 'Misskey', link: '/software/misskey.md' },
         ]
       },
-      { text: 'Misskey',
+      { text: '部署教程',
         items: [
-          { text: '简介', link: '/mastodon/intro.md' },
+          { text: 'Mastodon（长毛象）', link: '/for-admin/mastodon-deploy.md' },
+          { text: 'Misskey', link: '/for-admin/misskey-deploy.md' },
         ]
       },
+      { text: '客户端推荐', link: '/app/index.md'},
       { text: '本站贡献',
         items: [
           { text: '指南', link: '/contributing.md' },
