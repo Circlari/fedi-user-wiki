@@ -1,52 +1,37 @@
-# .github/workflows/vitepress-deploy.yml
-
-name: Deploy VitePress Site to GitHub Pages
+name: Deploy VitePress Site
 
 on:
   push:
-    branches: [main] # 或者您的默认分支，例如 master
-  workflow_dispatch: # 允许手动触发
-
-# 设置 GITHUB_TOKEN 的权限，以便部署到 GitHub Pages
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-# 只允许一个并发部署，取消进行中的旧部署（如果适用）
-concurrency:
-  group: pages
-  cancel-in-progress: false
+    branches:
+      - main      # 当向 main 分支推送时触发
 
 jobs:
-  build-and-deploy: # 或者您的 job 名称
-    name: Build and Deploy
+  build-and-deploy:
     runs-on: ubuntu-latest
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 18.x
+        uses: actions/setup-node@v3
         with:
-          node-version: '18' # 或者您需要的 Node.js 版本
-          pnpm-version: latest #  <--- 添加这一行，可以使用 'latest' 或指定版本，如 '8.x' 或 '8.15.0'
-          cache: 'pnpm'
+          node-version: '18.x'
+          cache: 'pnpm'                  # 如果你使用 npm，请改为 'npm' 或移除此行
 
       - name: Install dependencies
-        run: pnpm install # 现在 pnpm 应该可以被找到了
+        # 根据你使用的包管理器选择 pnpm 或 npm/install
+        run: |
+          pnpm install                # 使用 pnpm 时
+          # npm ci                     # 使用 npm 时
 
-      - name: Build VitePress site
-        run: pnpm run docs:build
-
-      - name: Setup GitHub Pages
-        uses: actions/configure-pages@v5 # 配置 GitHub Pages
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3 # 上传构建产物
-        with:
-          path: .vitepress/dist # VitePress 构建输出的默认目录
+      - name: Build VitePress
+        run: pnpm docs:build          # 假设你的 package.json 中有 "docs:build": "vitepress build"
 
       - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4 # 执行部署
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: .vitepress/dist  # 构建产物所在目录
+          publish_branch: gh-pages      # 部署目标分支
+          # dotfiles: true             # 如果需包含 .nojekyll 等隐藏文件，可启用此项
