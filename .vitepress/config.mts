@@ -29,7 +29,7 @@ export default defineConfig({
       },
       { text: '本站贡献',
         items: [
-          { text: '指南', link: '/contribute-guide.md' },
+          { text: '指南', link: '/contributing.md' },
           { text: '贡献者列表', link: '/contributers.md' },
         ]
       }
