@@ -1,0 +1,53 @@
+# .github/workflows/vitepress-deploy.yml
+
+name: Deploy VitePress Site to GitHub Pages
+
+on:
+  push:
+    branches: [main] # 或者您的默认分支，例如 master
+  workflow_dispatch: # 允许手动触发
+
+# 设置 GITHUB_TOKEN 的权限，以便部署到 GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 只允许一个并发部署，取消进行中的旧部署（如果适用）
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4 # 使用官方的 checkout action 来拉取代码
+        with:
+          fetch-depth: 0 # 如果您的 VitePress 主题使用了 git 日志来显示最后更新时间
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4 # 设置 Node.js 环境
+        with:
+          node-version: '20' # 指定 Node.js 版本
+          cache: 'pnpm' # 如果使用 pnpm，启用缓存以加快依赖安装速度 (可选 yarn 或 npm)
+
+      - name: Install dependencies
+        run: pnpm install # 安装项目依赖 (根据您的包管理器修改: npm install 或 yarn install)
+
+      - name: Build VitePress site
+        run: pnpm run docs:build # 运行构建命令 (通常是这个，或根据您的 package.json 修改)
+
+      - name: Setup GitHub Pages
+        uses: actions/configure-pages@v5 # 配置 GitHub Pages
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3 # 上传构建产物
+        with:
+          path: .vitepress/dist # VitePress 构建输出的默认目录
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4 # 执行部署
