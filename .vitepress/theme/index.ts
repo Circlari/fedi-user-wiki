@@ -1,11 +1,11 @@
 // https://vitepress.dev/guide/custom-theme
 import { h } from 'vue'
-import WalineComment from './components/WalineComment.vue';
 import type { Theme } from 'vitepress'
 import DefaultTheme from 'vitepress/theme'
 import { useWaline } from 'vitepress-theme-website'
 import { useData } from 'vitepress';
 import './style.css'
+import WalineComment from './components/WalineComment.vue';
 
 
 export default {

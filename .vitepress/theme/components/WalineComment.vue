@@ -13,8 +13,7 @@ function initWaline() {
   Waline({
     el: '#waline',
     serverURL: 'https://fediwiki-comment.tkg3.top',  // 指向你 Docker 部署的后端
-    path: route.path                            // 用页面路径区分评论区
-    dark: 'auto',
+    path: route.path,                            // 用页面路径区分评论区
   })
 }
 
