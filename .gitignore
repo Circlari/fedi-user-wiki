@@ -1,44 +1,41 @@
-# Logs
-logs
-*.log
+# Node.js dependencies
+node_modules/
+
+# VuePress build output
+# (根据您的实际输出目录调整，通常是 .vuepress/dist)
+docs/.vuepress/dist/
+.vuepress/dist/ # 如果项目在根目录
+
+# VuePress cache and temp files
+docs/.vuepress/.cache/
+docs/.vuepress/.temp/
+.vuepress/.cache/ # 如果项目在根目录
+.vuepress/.temp/ # 如果项目在根目录
+
+# Log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-lerna-debug.log*
 
-# Node
-node_modules/
-dist/
-dist-ssr/
-*.local
-
-# VitePress
-.vitepress/cache/
-.vitepress/dist/
-
-# IDE & Editor files
+# Editor and IDE specific files
 .vscode/
 .idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# OS generated files
+*.sublime-workspace
 .DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
 
-# Test results
-/coverage/
-*.lcov
-
-# Environment variables
+# Environment variables files
 .env
 .env.*
+!/.env.example # 通常 .env.example 文件应该被提交
+
+# Operating System files
+Thumbs.db
+ehthumbs.db
+
+# Optional: Coverage directory
+coverage/
+
+# Optional: Local user-specific files (e.g. from some tools)
+.eslintcache
+*.tsbuildinfo
