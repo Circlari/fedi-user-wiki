@@ -12,9 +12,6 @@ importers:
         specifier: ^5.2.4
         version: 5.2.4(vite@5.4.19)(vue@3.5.14)
     devDependencies:
-      '@waline/client':
-        specifier: ^3.5.7
-        version: 3.5.7
       typescript-vue-plugin:
         specifier: ^1.8.27
         version: 1.8.27
@@ -564,14 +561,6 @@ packages:
     resolution: {integrity: sha512-vx9ZPDF5HcU9up3Jgt3G62dMUfZEdk6tLyBAHYAG4F4n73vpaA7J5hdncDI/lS9Vm7GA/FPlbOmh9TrDZROTpg==}
     peerDependencies:
       vue: ^3.5.0
-
-  '@waline/api@1.0.0':
-    resolution: {integrity: sha512-o0lWjt+/oZH1/4q3DJxTf5kdkgNbSmoLRXIiGznW225A6hq9/9IkOO1DiAijIsxGYJS6psFC+58+IzkD1EerBA==}
-    engines: {node: '>=18'}
-
-  '@waline/client@3.5.7':
-    resolution: {integrity: sha512-9DMlO9fiOgnBQRCIlyasfe0mbpIe4fgecsbOLhai1TbAa9XONFfZYvHoqppedfiyT8Wi156PUFgGNkXFIJowEg==}
-    engines: {node: '>=18'}
 
   algoliasearch@5.25.0:
     resolution: {integrity: sha512-n73BVorL4HIwKlfJKb4SEzAYkR3Buwfwbh+MYxg2mloFph2fFGV58E90QTzdbfzWrLn4HE5Czx/WTjI8fcHaMg==}
@@ -1361,20 +1350,6 @@ snapshots:
     dependencies:
       vue: 3.5.14
 
-  '@waline/api@1.0.0': {}
-
-  '@waline/client@3.5.7':
-    dependencies:
-      '@vueuse/core': 13.2.0(vue@3.5.14)
-      '@waline/api': 1.0.0
-      autosize: 6.0.1
-      marked: 15.0.11
-      marked-highlight: 2.2.1(marked@15.0.11)
-      recaptcha-v3: 1.11.3
-      vue: 3.5.14
-    transitivePeerDependencies:
-      - typescript
-
   algoliasearch@5.25.0:
     dependencies:
       '@algolia/client-abtesting': 5.25.0
@@ -1687,7 +1662,7 @@ snapshots:
 
   vitepress-theme-website@1.0.8:
     dependencies:
-      '@waline/client': 3.5.7
+      
     transitivePeerDependencies:
       - typescript
 
