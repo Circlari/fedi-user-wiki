@@ -1,5 +1,6 @@
 import { defineConfig } from 'vitepress'
 import { useData } from 'vitepress';
+import vue from '@vitejs/plugin-vue';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
