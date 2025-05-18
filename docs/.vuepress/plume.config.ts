@@ -11,7 +11,7 @@ export default defineThemeConfig({
   appearance: true,  // 配置 深色模式
 
   social: [
-    { icon: 'github', link: '/' },
+    { icon: 'github', link: 'https://github.com/Circlari/fedi-user-wiki' },
   ],
   // navbarSocialInclude: ['github'], // 允许显示在导航栏的 social 社交链接
   // aside: true, // 页内侧边栏， 默认显示在右侧
@@ -52,7 +52,16 @@ export default defineThemeConfig({
         { text: '什么是联邦宇宙', link: 'intro.md' },
         { text: 'Fedi 概念', link: 'concepts.md' },
         { text: '联邦宇宙的优点', link: 'why.md'}
-      ]
+      ],
+      '/software/': [
+        { text: 'Mastodon', link: 'mastodon.md' },
+        { text: 'Misskey', link: 'misskey.md' },
+      ],
+      '/for-admin/': [
+        { text: 'Mastodon 部署', link: 'deploy/mastodon.md' },
+        { text: 'Misskey 部署', link: 'deploy/misskey.md' },
+        { text: '运营的很多事', link: 'operating.md' },
+      ],
     }
 
   /**

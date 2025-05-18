@@ -18,18 +18,18 @@ export default defineUserConfig({
 
   theme: plumeTheme({
     /* 添加您的部署域名, 有助于 SEO, 生成 sitemap */
-    // hostname: 'https://your_site_url',
+     hostname: 'https://fedi-wiki.tkg3.top',
 
     /* 文档仓库配置，用于 editLink */
-    // docsRepo: '',
-    // docsDir: 'docs',
-    // docsBranch: '',
+     docsRepo: 'https://github.com/Circlari/fedi-user-wiki/',
+     docsDir: 'docs',
+     docsBranch: 'main',
 
     /* 页内信息 */
      editLink: true,
-    // lastUpdated: true,
-    // contributors: true,
-    // changelog: false,
+     lastUpdated: false,
+     contributors: true,
+     changelog: false,
     /**
      * 博客
      * @see https://theme-plume.vuejs.press/config/basic/#blog
@@ -45,13 +45,26 @@ export default defineUserConfig({
     // },
 
     /* 博客文章页面链接前缀 */
-    article: '/article/',
+    // article: '/article/',
 
     /**
      * 编译缓存，加快编译速度
      * @see https://theme-plume.vuejs.press/config/basic/#cache
      */
     cache: 'filesystem',
+
+    bulletin: {
+      layout: 'top-right',
+      title: '欢迎访问',
+      contentType: 'markdown', 
+      lifetime: 'once',
+      content: `\
+本站于2025.5.18建立，目前处于初期建设阶段。
+内容架构尚未完全确定，敬请谅解。
+若有意愿参与建设，可参照 [贡献指南](/contributing) 。
+(公告仅显示一次）
+`,
+    },
 
     /**
      * 为 markdown 文件自动添加 frontmatter 配置
