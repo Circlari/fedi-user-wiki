@@ -1,9 +1,14 @@
 import { defineConfig } from 'vitepress'
+import { useData } from 'vitepress';
+import vue from '@vitejs/plugin-vue';
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  lang: 'zh-CN',
   title: "Fedi 新手用户指南",
   description: "一个面向新手用户的fediverse指南。",
+  appearance: true,
+  lastUpdated: true,
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
@@ -43,9 +48,14 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/Circlari/fedi-user-wiki' }
     ],
+    
     footer: {
-      message: 'Powered by Vitepress',
-      copyright: '©2025 Circlari-team and all contributers'
-    }
+      message: 'Powered by <a href="https://vitepress.dev/zh/" target="_blank" rel="noopener">VitePress</a>',
+      copyright: '©2025 Circlari-team and all contributors<br>本站内容使用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 协议。'
+    },
+
+    search: {
+      provider: 'local'
+    },
   }
 })

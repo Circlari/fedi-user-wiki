@@ -13,5 +13,8 @@ export default {
   },
   enhanceApp({ app, router, siteData }) {
     // ...
+  },
+  setup() {
+
   }
 } satisfies Theme
