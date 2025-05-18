@@ -17,6 +17,18 @@ config:
           link: /meet-fedi/
         -
           theme: alt
+          text: 应用生态
+          link: /software/
+        -
+          theme: alt
+          text: 站长指南
+          link: /for-admin/
+        -
+          theme: alt
+          text: 内容贡献指南
+          link: /contributing/
+        -
+          theme: alt
           text: Github →
-          link: https://github.com/pengzhanbo/vuepress-theme-plume
+          link: https://github.com/Circlari/fedi-user-wiki
 ---
