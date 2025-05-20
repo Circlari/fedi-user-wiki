@@ -1,0 +1,59 @@
+name: 构建 VuePress 静态资源
+# Powered on Google Gemini 2.5 Pro
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    name: 构建并创建静态资源
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write # 允许写入仓库内容，ghaction-github-pages 需要此权限推送分支
+
+    steps:
+      - name: 检出代码 🛎️
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: 设置 Node.js 环境 ⚙️
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 安装与设置 pnpm 🛠️
+        uses: pnpm/action-setup@v4 
+        with:
+          version: 10.11.0 
+
+      - name: 获取 pnpm 存储目录路径 📂
+        id: pnpm-cache 
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_OUTPUT
+
+      - name: 设置 pnpm 缓存 ⚡
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }} # 缓存 pnpm store 目录
+          key: ${{ runner.os }}-pnpm-store-v1-${{ hashFiles('**/pnpm-lock.yaml') }} # 缓存的唯一键
+          restore-keys: | # 如果精确键未找到，尝试恢复的备用键
+            ${{ runner.os }}-pnpm-store-v1-
+
+      - name: 使用 pnpm 安装依赖 📦
+        run: pnpm install --frozen-lockfile
+
+      - name: 构建 VuePress 🏗️
+        run: pnpm run docs:build 
+
+      - name: 部署到 page 分支 🚀
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: page
+          build_dir: docs/.vuepress/dist 
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 

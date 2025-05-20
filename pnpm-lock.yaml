@@ -15,9 +15,6 @@ importers:
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.23
         version: 2.0.0-rc.23(@types/node@22.15.18)(less@4.3.0)(sass-embedded@1.89.0)(sass@1.89.0)(stylus@0.64.0)(typescript@5.8.3)
-      '@vuepress/plugin-umami-analytics':
-        specifier: 2.0.0-rc.105
-        version: 2.0.0-rc.105(typescript@5.8.3)(vuepress@2.0.0-rc.23(@vuepress/bundler-vite@2.0.0-rc.23(@types/node@22.15.18)(less@4.3.0)(sass-embedded@1.89.0)(sass@1.89.0)(stylus@0.64.0)(typescript@5.8.3))(typescript@5.8.3)(vue@3.5.14(typescript@5.8.3)))
       http-server:
         specifier: ^14.1.1
         version: 14.1.1
@@ -1042,11 +1039,6 @@ packages:
 
   '@vuepress/plugin-sitemap@2.0.0-rc.105':
     resolution: {integrity: sha512-Egge0HXN3wPGCCHetjIISbvD2XZm5cC34cGPKkBx1pmQ2ppeinpuNV/UVl5LJ1Q4I/G2XZF9RRb4L4S72JM58g==}
-    peerDependencies:
-      vuepress: 2.0.0-rc.23
-
-  '@vuepress/plugin-umami-analytics@2.0.0-rc.105':
-    resolution: {integrity: sha512-6OnV77tV7zm13qfDK+93qVEH++HHr09N9IUp085Y5AT3QMUwav1PzaB7zY2JAK7ouUegNLRVullsPDqIsINQmQ==}
     peerDependencies:
       vuepress: 2.0.0-rc.23
 
@@ -3760,14 +3752,6 @@ snapshots:
     dependencies:
       '@vuepress/helper': 2.0.0-rc.105(typescript@5.8.3)(vuepress@2.0.0-rc.23(@vuepress/bundler-vite@2.0.0-rc.23(@types/node@22.15.18)(less@4.3.0)(sass-embedded@1.89.0)(sass@1.89.0)(stylus@0.64.0)(typescript@5.8.3))(typescript@5.8.3)(vue@3.5.14(typescript@5.8.3)))
       sitemap: 8.0.0
-      vuepress: 2.0.0-rc.23(@vuepress/bundler-vite@2.0.0-rc.23(@types/node@22.15.18)(less@4.3.0)(sass-embedded@1.89.0)(sass@1.89.0)(stylus@0.64.0)(typescript@5.8.3))(typescript@5.8.3)(vue@3.5.14(typescript@5.8.3))
-    transitivePeerDependencies:
-      - typescript
-
-  '@vuepress/plugin-umami-analytics@2.0.0-rc.105(typescript@5.8.3)(vuepress@2.0.0-rc.23(@vuepress/bundler-vite@2.0.0-rc.23(@types/node@22.15.18)(less@4.3.0)(sass-embedded@1.89.0)(sass@1.89.0)(stylus@0.64.0)(typescript@5.8.3))(typescript@5.8.3)(vue@3.5.14(typescript@5.8.3)))':
-    dependencies:
-      '@vuepress/helper': 2.0.0-rc.105(typescript@5.8.3)(vuepress@2.0.0-rc.23(@vuepress/bundler-vite@2.0.0-rc.23(@types/node@22.15.18)(less@4.3.0)(sass-embedded@1.89.0)(sass@1.89.0)(stylus@0.64.0)(typescript@5.8.3))(typescript@5.8.3)(vue@3.5.14(typescript@5.8.3)))
-      vue: 3.5.14(typescript@5.8.3)
       vuepress: 2.0.0-rc.23(@vuepress/bundler-vite@2.0.0-rc.23(@types/node@22.15.18)(less@4.3.0)(sass-embedded@1.89.0)(sass@1.89.0)(stylus@0.64.0)(typescript@5.8.3))(typescript@5.8.3)(vue@3.5.14(typescript@5.8.3))
     transitivePeerDependencies:
       - typescript
