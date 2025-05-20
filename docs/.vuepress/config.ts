@@ -1,6 +1,7 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
+import { umamiAnalyticsPlugin } from '@vuepress/plugin-umami-analytics'
 
 export default defineUserConfig({
   base: '/',
@@ -183,4 +184,15 @@ export default defineUserConfig({
      */
     // encrypt: {},
   }),
+  plugins: [
+    umamiAnalyticsPlugin({
+      // 插件选项
+      id: 'a656243d-d453-4123-8ca8-9de7b382e71d', // 必填，你在 Umami 中设置的网站 ID
+      hostUrl: 'https://umami.tkg3.top', // 必填，你的 Umami 实例的 URL (例如：https://umami.yourdomain.com)
+      // srcLink: 'YOUR_UMAMI_SCRIPT_NAME.js', // 可选，默认为 'umami.js'。如果你的脚本文件名不同，请设置此项。通常 hostUrl 已经包含了脚本路径，这个选项可能不需要。请参考插件文档。
+      // autoTrack: true, // 可选，默认为 true，自动跟踪页面浏览和事件
+      // cache: false, // 可选，默认为 false，是否缓存数据以提高脚本性能（会使用 sessionStorage）
+      // domains: ['yourdomain.com', 'anotherdomain.com'], // 可选，让跟踪器只在特定域名上运行
+    }),
+  ],
 })
