@@ -1,6 +1,7 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
+// import { umamiAnalyticsPlugin } from '@vuepress/plugin-umami-analytics'
 
 export default defineUserConfig({
   base: '/',
@@ -11,6 +12,14 @@ export default defineUserConfig({
   head: [
     // 配置站点图标
     ['link', { rel: 'icon', type: 'image/png', href: 'https://theme-plume.vuejs.press/favicon-32x32.png' }],
+    [
+      'script',
+      {
+        defer: true,
+        src: 'https://umami.tkg3.top/script.js',
+        'data-website-id': 'a656243d-d453-4123-8ca8-9de7b382e71d',
+      },
+    ],
   ],
 
   bundler: viteBundler(),
