@@ -1,4 +1,5 @@
-name: 部署 VuePress 博客
+name: 构建 VuePress 静态资源
+# Powered on Google Gemini 2.5 Pro
 
 on:
   push:
@@ -8,7 +9,7 @@ on:
 
 jobs:
   build-and-deploy:
-    name: 构建并部署博客
+    name: 构建并创建静态资源
     runs-on: ubuntu-latest
     permissions:
       contents: write # 允许写入仓库内容，ghaction-github-pages 需要此权限推送分支
@@ -17,21 +18,20 @@ jobs:
       - name: 检出代码 🛎️
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # 获取所有 Git 提交历史，某些 VuePress 主题或插件可能需要
+          fetch-depth: 0
 
       - name: 设置 Node.js 环境 ⚙️
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          # 对于 pnpm，更精细的缓存控制在 pnpm/action-setup 和 actions/cache 中处理
 
       - name: 安装与设置 pnpm 🛠️
-        uses: pnpm/action-setup@v4 # 你使用的是 v4，很好
+        uses: pnpm/action-setup@v4 
         with:
-          version: 10.11.0 # 建议指定一个 pnpm 版本，例如 8 或 9
+          version: 10.11.0 
 
       - name: 获取 pnpm 存储目录路径 📂
-        id: pnpm-cache # 给这个步骤设置一个ID，方便后续引用其输出
+        id: pnpm-cache 
         shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_OUTPUT
@@ -47,16 +47,13 @@ jobs:
       - name: 使用 pnpm 安装依赖 📦
         run: pnpm install --frozen-lockfile
 
-      - name: 构建 VuePress 博客 🏗️
-        # 确保你的 package.json 中有 "docs:build" 脚本
-        run: pnpm run docs:build # 或者你实际的构建命令，例如 pnpm run build
+      - name: 构建 VuePress 🏗️
+        run: pnpm run docs:build 
 
       - name: 部署到 page 分支 🚀
         uses: crazy-max/ghaction-github-pages@v4
         with:
           target_branch: page
-          build_dir: docs/.vuepress/dist # 确保这是你 VuePress 的实际构建输出目录
-          # GITHUB_TOKEN 默认就会被 action 使用，但显式传递也可以
-          # token: ${{ secrets.GITHUB_TOKEN }} # 或者使用这种方式传递
+          build_dir: docs/.vuepress/dist 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
