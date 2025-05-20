@@ -18,6 +18,7 @@ export default defineUserConfig({
         defer: true,
         src: 'https://umami.tkg3.top/script.js',
         'data-website-id': 'a656243d-d453-4123-8ca8-9de7b382e71d',
+        'data-domains': 'fedi-wiki.tkg3.top',
       },
     ],
   ],
@@ -79,11 +80,11 @@ export default defineUserConfig({
      * 为 markdown 文件自动添加 frontmatter 配置
      * @see https://theme-plume.vuejs.press/config/basic/#autofrontmatter
      */
-    // autoFrontmatter: {
-    //   permalink: true,  // 是否生成永久链接
-    //   createTime: true, // 是否生成创建时间
-    //   title: true,      // 是否生成标题
-    // },
+     autoFrontmatter: {
+       permalink: true,  // 是否生成永久链接
+       createTime: true, // 是否生成创建时间
+       title: true,      // 是否生成标题
+     },
 
     /* 本地搜索, 默认启用 */
     search: { provider: 'local' },

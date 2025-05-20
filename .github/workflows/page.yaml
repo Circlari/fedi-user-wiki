@@ -1,0 +1,73 @@
+# 工作流程名称
+name: 使用 pnpm 构建并部署 VuePress 站点到 pages 分支
+
+# 触发工作流程的事件
+on:
+  push:
+    branches:
+      - main # 监听 main 分支的 push 事件，你可以修改为你的主分支名，例如 master
+
+# 定义一个或多个作业 (jobs)
+jobs:
+  # 作业ID，可以自定义
+  build-and-deploy:
+    # 作业名称，显示在 GitHub Actions UI 中
+    name: 构建并部署到 pages 分支
+    # 作业运行的环境
+    runs-on: ubuntu-latest
+    # 为作业设置权限
+    permissions:
+      contents: write # 授予写入仓库内容的权限，用于 peaceiris/actions-gh-pages 推送分支
+
+    # 作业中的步骤
+    steps:
+      - name: 检出代码仓库 🛎️
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # 获取所有 Git 提交历史，vuepress-theme-plume 或其插件可能需要
+
+      - name: 设置 Node.js 环境 ⚙️
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20' # 指定你项目所需的 Node.js 版本, 例如 18, 20
+          # pnpm 的缓存将由 pnpm/action-setup 和 actions/cache 配合处理
+
+      - name: 安装与设置 pnpm 🛠️
+        uses: pnpm/action-setup@v3 # 使用官方的 pnpm-setup action
+        with:
+          version: 8 # 指定 pnpm 版本，或移除此行使用最新稳定版
+          run_install: false # 我们将在后续步骤中手动运行安装命令
+
+      - name: 获取 pnpm 存储目录路径 📂
+        id: pnpm-cache # 给这个步骤设置一个ID，方便后续引用其输出
+        shell: bash # 使用 bash shell 执行命令
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_OUTPUT # 获取 pnpm store 路径并设为输出变量
+
+      - name: 设置 pnpm 缓存 ⚡
+        uses: actions/cache@v4
+        with:
+          path: ${{ steps.pnpm-cache.outputs.STORE_PATH }} # 缓存 pnpm store 目录
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }} # 缓存的唯一键
+          restore-keys: | # 如果精确键未找到，尝试恢复的备用键
+            ${{ runner.os }}-pnpm-store-
+
+      - name: 使用 pnpm 安装项目依赖 📦
+        run: pnpm install --frozen-lockfile # --frozen-lockfile 确保使用 lock 文件中的版本，保证构建一致性
+
+      - name: 构建 VuePress 站点 🏗️
+        run: pnpm run docs:build # 运行 package.json 中定义的构建脚本
+                                 # 例如: pnpm run build, 具体命令请查看你的 package.json
+
+      - name: 部署到 "pages" 分支 🚀
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }} # GitHub 自动提供的令牌，用于认证
+          publish_dir: docs/.vuepress/dist # VuePress 构建输出的静态文件目录
+                                           # 请根据你的项目实际输出目录调整
+                                           # VuePress 1.x 通常是: docs/.vuepress/dist
+                                           # VuePress 2.x 通常也是: docs/.vuepress/dist (可在配置中修改)
+          publish_branch: pages # 指定要将静态文件推送到哪个分支，这里是 "pages"
+          user_name: 'github-actions[bot]' # 可选：自定义提交部署的用户名称
+          user_email: 'github-actions[bot]@users.noreply.github.com' # 可选：自定义提交部署的用户邮箱
+          # cname: example.com # 可选：如果你使用自定义域名，可以在这里指定
