@@ -1,5 +1,5 @@
 name: 构建 VuePress 静态资源
-# Powered on Google Gemini 2.5 Pro
+# Powered by Google Gemini 2.5 Pro
 
 on:
   push:
@@ -10,6 +10,7 @@ on:
 jobs:
   build-and-deploy:
     name: 构建并创建静态资源
+    if: github.repository == 'Circlari/fedi-user-wiki' #防止 fork 后自动触发 action
     runs-on: ubuntu-latest
     permissions:
       contents: write # 允许写入仓库内容，ghaction-github-pages 需要此权限推送分支
