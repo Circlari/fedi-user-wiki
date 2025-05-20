@@ -1,4 +1,4 @@
-name: 构建 VuePress  
+name: 部署 VuePress 博客
 
 on:
   push:
@@ -22,8 +22,6 @@ jobs:
 
       - name: 安装 pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 10
 
       - name: 安装依赖
         run: pnpm install --frozen-lockfile
