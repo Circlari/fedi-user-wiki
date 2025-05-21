@@ -58,9 +58,10 @@ export default defineThemeConfig({
         { text: 'Misskey', link: 'misskey.md' },
       ],
       '/for-admin/': [
+        { text: '必要的数字"基建"资源', link: 'resources.md' },
+        { text: '运营的很多事', link: 'operating.md' },
         { text: 'Mastodon 部署', link: 'deploy/mastodon.md' },
         { text: 'Misskey 部署', link: 'deploy/misskey.md' },
-        { text: '运营的很多事', link: 'operating.md' },
       ],
     }
 

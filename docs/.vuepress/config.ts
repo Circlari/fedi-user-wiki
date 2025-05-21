@@ -38,8 +38,9 @@ export default defineUserConfig({
     /* 页内信息 */
      editLink: true,
      lastUpdated: false,
-     contributors: true,
-     changelog: false,
+     contributors: {
+      mode: 'block',
+    },
     /**
      * 博客
      * @see https://theme-plume.vuejs.press/config/basic/#blog
@@ -100,7 +101,8 @@ export default defineUserConfig({
     //   apiKey: '',
     //   indexName: '',
     // },
-
+     changelog: true,
+     plugins: { git: true },
     /**
      * Shiki 代码高亮
      * @see https://theme-plume.vuejs.press/config/plugins/code-highlight/
@@ -192,5 +194,5 @@ export default defineUserConfig({
      * @see https://theme-plume.vuejs.press/guide/features/encryption/
      */
     // encrypt: {},
-  }),
+  })
 })
