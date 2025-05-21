@@ -38,7 +38,9 @@ export default defineUserConfig({
     /* 页内信息 */
      editLink: true,
      lastUpdated: false,
-     contributors: true,
+     contributors: {
+      mode: 'block',
+    },
     /**
      * 博客
      * @see https://theme-plume.vuejs.press/config/basic/#blog
