@@ -9,7 +9,6 @@ export const navbar = defineNavbarConfig([
     items: [
       { text: '操作指南', link: '/contributing.md', },
       { text: '贡献者名录', link: '/contributer-list.md', },
-      { text: '站点访问数据', link: 'https://umami.tkg3.top/share/CVo3v0LJqQE4Fq7Y/fedi-wiki.tkg3.top', },
     ],
   }, 
 ])

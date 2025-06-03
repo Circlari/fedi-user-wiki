@@ -12,14 +12,14 @@ export default defineUserConfig({
   head: [
     // 配置站点图标
     ['link', { rel: 'icon', type: 'image/png', href: 'https://theme-plume.vuejs.press/favicon-32x32.png' }],
+    ['script', { async: true, src: 'https://www.googletagmanager.com/gtag/js?id=G-RE9955WQBY' }],
     [
       'script',
-      {
-        defer: true,
-        src: 'https://umami.tkg3.top/script.js',
-        'data-website-id': 'a656243d-d453-4123-8ca8-9de7b382e71d',
-        'data-domains': 'fedi-wiki.tkg3.top',
-      },
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-RE9955WQBY');`
     ],
   ],
 
