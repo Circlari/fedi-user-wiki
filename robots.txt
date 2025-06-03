@@ -1,0 +1,3 @@
+Sitemap: https://fedi-wiki.tkg3.top/sitemap.xml
+User-agent:*
+Disallow:
