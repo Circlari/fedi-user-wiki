@@ -40,6 +40,12 @@ export default defineUserConfig({
      lastUpdated: false,
      contributors: {
       mode: 'block',
+      info: [
+        {
+          username: 'bingxin666', // github username
+          alias: ['Bingxin'], // 别名，本地 git 配置中的用户名
+        }
+      ]
     },
     /**
      * 博客

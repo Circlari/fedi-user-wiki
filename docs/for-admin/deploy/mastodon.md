@@ -6,6 +6,9 @@ permalink: /for-admin/deploy/mastodon/
 ::: tip
 本页专注于 Mastodon 服务端的部署流程，涉及域名、服务器等资源的内容请至“[必要的数字基建资源](/for-admin/resources/)”查看。
 :::
+::: info 内容相关
+本页由 [@Bingxin](https://github.com/bingxin666) 贡献，内容来自其博客文章（[1](https://blog.byteloid.one/2024/11/01/docker%E9%83%A8%E7%BD%B2mastodon/), [2](https://blog.byteloid.one/2024/12/27/mastodon%E7%AC%AC%E4%BA%8C%E9%83%A8%E5%88%86/)）的优化。
+:::
 
 ## 通过 Docker Compose 部署
 
