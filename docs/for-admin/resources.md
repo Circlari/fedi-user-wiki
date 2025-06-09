@@ -4,9 +4,7 @@ createTime: 2025/05/21 13:25:54
 permalink: /for-admin/resources/
 ---
 ::: info
-本条目基于 Circlari 联合贡献者 Mikuの鬆 个人原博文授权修订转载
-
-原博文地址：https://blog.sotkg.com/2025/06/self-fediverse-prepare
+本页由 [Mikuの鬆](https://blog.sotkg.com) 贡献，内容来自其博客文章[1](https://blog.sotkg.com/2025/06/self-fediverse-prepare)的优化修订。
 :::
 ## 前言
 
