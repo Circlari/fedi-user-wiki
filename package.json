@@ -3,7 +3,7 @@
   "type": "module",
   "version": "1.0.0",
   "description": "一个面向新手用户的联邦用户指南。",
-  "packageManager": "pnpm@10.11.0",
+  "packageManager": "pnpm@10.12.1",
   "pnpm": {
     "onlyBuiltDependencies": [
       "@parcel/watcher",
