@@ -10,3 +10,10 @@ updates:
     schedule:
       interval: "weekly"
     rebase-strategy: auto
+    groups:
+      all-deps:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
