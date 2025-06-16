@@ -2,9 +2,16 @@
 title: 必要的数字“基建”资源
 createTime: 2025/05/21 13:25:54
 permalink: /for-admin/resources/
+copyright:
+  creation: reprint
+  license: CC-BY-NC-SA-4.0
+  source: https://blog.sotkg.com/2025/06/self-fediverse-prepare
+  author:
+    name: Mikuの鬆
+    url: https://blog.sotkg.com
 ---
 ::: info
-本页由 [Mikuの鬆](https://blog.sotkg.com) 贡献，内容来自其博客文章[1](https://blog.sotkg.com/2025/06/self-fediverse-prepare)的优化修订。
+本页由 [Mikuの鬆](https://blog.sotkg.com) 贡献，内容来自其[博客文章](https://blog.sotkg.com/2025/06/self-fediverse-prepare)的优化修订。
 :::
 ## 前言
 

@@ -31,7 +31,7 @@ export default defineUserConfig({
      hostname: 'https://fedi-wiki.tkg3.top',
 
     /* 文档仓库配置，用于 editLink */
-     docsRepo: 'https://github.com/Circlari/fedi-user-wiki/',
+     docsRepo: 'https://github.com/Circlari/fedi-user-wiki',
      docsDir: 'docs',
      docsBranch: 'main',
 
