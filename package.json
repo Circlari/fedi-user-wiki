@@ -33,6 +33,6 @@
     "vuepress-theme-plume": "1.0.0-rc.154"
   },
   "dependencies": {
-    "@waline/client": "^3.5.7"
+    "@waline/client": "^3.6.0"
   }
 }
